@@ -1,0 +1,6 @@
+{
+  "name": "VibeCheck Travel",
+  "description": "An end-to-end platform designed to completely solve group trip indecision using AI recommendations and ranked-choice voting with a retro analog aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

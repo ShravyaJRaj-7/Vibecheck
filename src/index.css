@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Comfortaa:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Comfortaa", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Cabin", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-vanilla: #FFF9E6;
+  --color-mustard: #E9C46A;
+  --color-teal: #2A9D8F;
+  --color-coral: #E76F51;
+  --color-dark-ink: #264653;
+}
+
+@layer base {
+  body {
+    @apply bg-vanilla text-dark-ink font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight text-dark-ink;
+  }
+}
+
+@layer components {
+  .retro-card {
+    @apply bg-white border-2 border-dark-ink shadow-[4px_4px_0px_0px_rgba(38,70,83,1)] rounded-xl overflow-hidden;
+  }
+  
+  .retro-button {
+    @apply px-6 py-2 border-2 border-dark-ink rounded-lg font-bold shadow-[2px_2px_0px_0px_rgba(38,70,83,1)] transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-none disabled:opacity-50 disabled:bg-gray-200;
+  }
+
+  .ticket-stub {
+    @apply relative border-2 border-teal bg-white rounded-lg p-4;
+    mask-image: radial-gradient(circle at 0 50%, transparent 10px, black 10px),
+                radial-gradient(circle at 100% 50%, transparent 10px, black 10px);
+    mask-composite: intersect;
+  }
+  
+  .post-stamp {
+    @apply border-2 border-dashed border-coral inline-flex items-center justify-center p-2 rounded-sm rotate-3 bg-white/50;
+  }
+
+  .retro-tape {
+    @apply absolute h-8 w-24 bg-mustard/40 backdrop-blur-sm -rotate-12 border border-black/5 -top-4 left-1/2 -translate-x-1/2 z-20;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .sticker {
+    @apply p-2 bg-white border-2 border-dark-ink rounded-full shadow-[2px_2px_0px_0px_rgba(38,70,83,1)] font-mono text-[10px] font-bold text-dark-ink;
+  }
+}
+
+.vintage-overlay {
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  pointer-events: none;
+  opacity: 0.4;
+}
